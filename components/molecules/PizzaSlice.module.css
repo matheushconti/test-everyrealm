@@ -1,0 +1,135 @@
+@value sizePizzaWithCrustMobile: 300px;
+@value sizePizzaMobile: 260px;
+@value sizePizzaWithCrust: 500px;
+@value sizePizza: 460px;
+@value sizeHalfPizzaWithCrust: calc(sizePizzaWithCrust/2);
+
+.sliceHoldContainer {
+  position: absolute;
+  width: sizePizzaWithCrust;
+  height: sizePizzaWithCrust;
+  pointer-events: none;
+  transition-property: top, left;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  top: 0;
+  left: 0;
+}
+.sliceHold {
+  position: absolute;
+  width: sizePizzaWithCrust;
+  height: sizePizzaWithCrust;
+  clip: rect(0px, sizeHalfPizzaWithCrust, sizeHalfPizzaWithCrust, 0px);
+  pointer-events: none;
+  overflow: hidden;
+}
+.sliceBorder {
+  background: #959035;
+  width: sizePizzaWithCrust;
+  height: sizePizzaWithCrust;
+  clip: rect(0px, sizeHalfPizzaWithCrust, sizeHalfPizzaWithCrust, 0px);
+  border-radius: sizeHalfPizzaWithCrust;
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.slice {
+  background: #aea943;
+  width: sizePizza;
+  height: sizePizza;
+  border-radius: sizePizza;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 2;
+  pointer-events: auto;
+  cursor: default;
+}
+.sliceBorder:has(.slice:hover) {
+  pointer-events: none;
+}
+@media (max-width: 640px) {
+  .sliceHoldContainer {
+    width: sizePizzaWithCrustMobile;
+    height: sizePizzaWithCrustMobile;
+  }
+  .sliceHold {
+    width: sizePizzaWithCrustMobile;
+    height: sizePizzaWithCrustMobile;
+    clip: rect(0px, sizeHalfPizzaWithCrust, sizeHalfPizzaWithCrust, 0px);
+  }
+  .sliceBorder {
+    width: sizePizzaWithCrustMobile;
+    height: sizePizzaWithCrustMobile;
+    clip: rect(0px, sizeHalfPizzaWithCrust, sizeHalfPizzaWithCrust, 0px);
+    border-radius: sizeHalfPizzaWithCrust;
+  }
+  .slice {
+    width: sizePizzaMobile;
+    height: sizePizzaMobile;
+    border-radius: sizePizzaMobile;
+  }
+}
+
+.slice0:has(.slice:hover, .sliceBorder:hover) {
+  left: -8px;
+  top: -20px;
+}
+/* slice1 */
+.slice1 {
+  transform: rotate(45deg);
+}
+.slice1:has(.slice:hover, .sliceBorder:hover) {
+  top: -20px;
+  left: 8px;
+}
+/* slice2 */
+.slice2 {
+  transform: rotate(90deg);
+}
+.slice2:has(.slice:hover, .sliceBorder:hover) {
+  left: 20px;
+  top: -8px;
+}
+/* slice3 */
+.slice3 {
+  transform: rotate(135deg);
+}
+.slice3:has(.slice:hover, .sliceBorder:hover) {
+  left: 20px;
+  top: 8px;
+}
+/* slice4 */
+.slice4 {
+  transform: rotate(180deg);
+}
+.slice4:has(.slice:hover, .sliceBorder:hover) {
+  left: 8px;
+  top: 20px;
+}
+/* slice5 */
+.slice5 {
+  transform: rotate(-135deg);
+}
+.slice5:has(.slice:hover, .sliceBorder:hover) {
+  left: -8px;
+  top: 20px;
+}
+/* slice6 */
+.slice6 {
+  transform: rotate(-90deg);
+}
+.slice6:has(.slice:hover, .sliceBorder:hover) {
+  left: -20px;
+  top: 8px;
+}
+/* slice7 */
+.slice7 {
+  transform: rotate(-45deg);
+}
+.slice7:has(.slice:hover, .sliceBorder:hover) {
+  left: -20px;
+  top: -8px;
+}
