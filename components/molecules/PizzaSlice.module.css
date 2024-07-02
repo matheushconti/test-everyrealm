@@ -3,6 +3,7 @@
 @value sizePizzaWithCrust: 500px;
 @value sizePizza: 460px;
 @value sizeHalfPizzaWithCrust: calc(sizePizzaWithCrust/2);
+@value sizeHalfPizzaWithCrustMobile: calc(sizePizzaWithCrustMobile/2);
 
 .sliceHoldContainer {
   position: absolute;
@@ -58,13 +59,13 @@
   .sliceHold {
     width: sizePizzaWithCrustMobile;
     height: sizePizzaWithCrustMobile;
-    clip: rect(0px, sizeHalfPizzaWithCrust, sizeHalfPizzaWithCrust, 0px);
+    clip: rect(0px, sizeHalfPizzaWithCrustMobile, sizeHalfPizzaWithCrustMobile, 0px);
   }
   .sliceBorder {
     width: sizePizzaWithCrustMobile;
     height: sizePizzaWithCrustMobile;
-    clip: rect(0px, sizeHalfPizzaWithCrust, sizeHalfPizzaWithCrust, 0px);
-    border-radius: sizeHalfPizzaWithCrust;
+    clip: rect(0px, sizeHalfPizzaWithCrustMobile, sizeHalfPizzaWithCrustMobile, 0px);
+    border-radius: sizeHalfPizzaWithCrustMobile;
   }
   .slice {
     width: sizePizzaMobile;

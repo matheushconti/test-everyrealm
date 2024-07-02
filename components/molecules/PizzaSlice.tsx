@@ -1,5 +1,6 @@
 import styles from "./PizzaSlice.module.css";
 import Pepperoni from "@/components/atoms/Pepperoni";
+import useWindowDimensions from "@/hooks/useWindowDimensions";
 import { getRndInteger } from "@/utils/handlers";
 import { memo } from "react";
 
@@ -17,10 +18,14 @@ const PizzaSlice = memo(function PizzaSliceF({
   pepperoniAmount,
   onRightClick,
 }: IPizzaSlice) {
+  const { width } = useWindowDimensions();
+  const maxLeft = width > 640 ? 150 : 75;
+  const maxTop = width > 640 ? 200 : 100;
+  const pepperoniSize = width > 640 ? 50 : 30;
   const pepperonis: any = [];
   for (let i = 0; i < pepperoniAmount; i++) {
-    const left = getRndInteger(20, 150);
-    const top = getRndInteger(left + 50, 200);
+    const left = getRndInteger(20, maxLeft);
+    const top = getRndInteger(left + pepperoniSize, maxTop);
     pepperonis.push(
       <Pepperoni key={`peperoni_${id}_${i}`} top={top} left={left} />
     );
