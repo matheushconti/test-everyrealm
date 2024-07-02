@@ -4,7 +4,13 @@ This project was created using [Next.js](https://nextjs.org/) project bootstrapp
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+After installation you can run the project:
 
 ```bash
 npm run dev
